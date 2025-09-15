@@ -51,7 +51,7 @@ namespace WellnessHub.Migrations
 
                     b.ToTable("Comidas");
                 });
-
+            modelBuilder.Entity("WellnessHubApi.Models.Workout", b =>
             modelBuilder.Entity("WellnessHub.Models.EstadoDeAnimo", b =>
                 {
                     b.Property<int>("Id")
@@ -60,6 +60,18 @@ namespace WellnessHub.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("CaloriesBurned")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DurationMinutes")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Exercise")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Intensity")
                     b.Property<int>("Energia")
                         .HasColumnType("int");
 
@@ -67,23 +79,21 @@ namespace WellnessHub.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
-
+                    b.Property<DateTime>("SessionDate")
+                        .HasColumnType("date");
+                    b.Property<string>("User")
                     b.Property<DateTime>("FechaRegistro")
                         .HasColumnType("datetime2");
-
                     b.Property<int>("HorasDeSueno")
                         .HasColumnType("int");
-
                     b.Property<int>("NivelDeEstres")
                         .HasColumnType("int");
-
                     b.Property<string>("Usuario")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
                     b.HasKey("Id");
-
+                    b.ToTable("Workouts");
                     b.ToTable("EstadosDeAnimo");
                 });
 #pragma warning restore 612, 618

@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using WellnessHubApi.Data;
+using WellnessHubApi.Models;
 using WellnessHub.Data;
 using WellnessHub.Models;
-
 namespace WellnessHub.Controllers
 {
     [Route("api/[controller]")]
@@ -20,6 +21,7 @@ namespace WellnessHub.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Comida>>> GetComidas()
         {
+            return await _context.Comidas.ToListAsy
             var comidas = await _context.Comidas.ToListAsync();
             return Ok(comidas);
         }
@@ -34,7 +36,6 @@ namespace WellnessHub.Controllers
             {
                 return NotFound();
             }
-
             return Ok(comida);
         }
 
