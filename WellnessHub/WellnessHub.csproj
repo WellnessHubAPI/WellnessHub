@@ -17,10 +17,4 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Compile Include="..\..\WellnessHubAPI\simulacro-dos-main\WellnessHubApi\Controllers\ComidasController.cs">
-        <Link>Controllers\ComidasController.cs</Link>
-      </Compile>
-    </ItemGroup>
-
 </Project>

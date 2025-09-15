@@ -8,5 +8,6 @@ namespace WellnessHubApi.Data
         public WellnessHubContext(DbContextOptions<WellnessHubContext> options) : base(options) { }
 
         public DbSet<Comida> Comidas { get; set; }
+        public DbSet<Workout> Workouts { get; set; } 
     }
 }
