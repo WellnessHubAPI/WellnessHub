@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WellnessHubApi.Models;
+using WellnessHub.Models;
 
-namespace WellnessHubApi.Data
+namespace WellnessHub.Data
 {
     public class WellnessHubContext : DbContext
     {
@@ -9,5 +9,6 @@ namespace WellnessHubApi.Data
 
         public DbSet<Comida> Comidas { get; set; }
         public DbSet<Workout> Workouts { get; set; } 
+        public DbSet<EstadoDeAnimo> EstadosDeAnimo { get; set; }
     }
 }

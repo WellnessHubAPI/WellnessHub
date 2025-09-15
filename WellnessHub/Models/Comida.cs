@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WellnessHubApi.Models
+namespace WellnessHub.Models
 {
     public class Comida
     {

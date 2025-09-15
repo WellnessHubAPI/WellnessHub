@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WellnessHubApi.Data;
+using WellnessHub.Data;
 
 #nullable disable
 
@@ -17,12 +17,12 @@ namespace WellnessHub.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.9")
+                .HasAnnotation("ProductVersion", "9.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("WellnessHubApi.Models.Comida", b =>
+            modelBuilder.Entity("WellnessHub.Models.Comida", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,8 +51,8 @@ namespace WellnessHub.Migrations
 
                     b.ToTable("Comidas");
                 });
-
             modelBuilder.Entity("WellnessHubApi.Models.Workout", b =>
+            modelBuilder.Entity("WellnessHub.Models.EstadoDeAnimo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -72,21 +72,29 @@ namespace WellnessHub.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Intensity")
+                    b.Property<int>("Energia")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Estado")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
-
                     b.Property<DateTime>("SessionDate")
                         .HasColumnType("date");
-
                     b.Property<string>("User")
+                    b.Property<DateTime>("FechaRegistro")
+                        .HasColumnType("datetime2");
+                    b.Property<int>("HorasDeSueno")
+                        .HasColumnType("int");
+                    b.Property<int>("NivelDeEstres")
+                        .HasColumnType("int");
+                    b.Property<string>("Usuario")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
                     b.HasKey("Id");
-
                     b.ToTable("Workouts");
+                    b.ToTable("EstadosDeAnimo");
                 });
 #pragma warning restore 612, 618
         }

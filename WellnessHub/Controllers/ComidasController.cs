@@ -2,8 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using WellnessHubApi.Data;
 using WellnessHubApi.Models;
-
-namespace WellnessHubApi.Controllers
+using WellnessHub.Data;
+using WellnessHub.Models;
+namespace WellnessHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -20,7 +21,9 @@ namespace WellnessHubApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Comida>>> GetComidas()
         {
-            return await _context.Comidas.ToListAsync();
+            return await _context.Comidas.ToListAsy
+            var comidas = await _context.Comidas.ToListAsync();
+            return Ok(comidas);
         }
 
         // GET: api/Meals/5
@@ -33,8 +36,7 @@ namespace WellnessHubApi.Controllers
             {
                 return NotFound();
             }
-
-            return comida;
+            return Ok(comida);
         }
 
         // POST: api/Meals
@@ -64,7 +66,7 @@ namespace WellnessHubApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!_context.Comidas.Any(e => e.Id == id))
+                if (!await _context.Comidas.AnyAsync(e => e.Id == id))
                 {
                     return NotFound();
                 }

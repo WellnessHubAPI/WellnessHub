@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WellnessHubApi.Data; 
+using Microsoft.OpenApi.Models;
+using WellnessHub.Data;
 
 
 var builder = WebApplication.CreateBuilder(args);
