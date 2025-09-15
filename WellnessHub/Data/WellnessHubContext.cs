@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WellnessHub.Models;
-
+using WellnessHubApi.Models;
 namespace WellnessHub.Data
 {
     public class WellnessHubContext : DbContext

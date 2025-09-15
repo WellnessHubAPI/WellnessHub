@@ -71,7 +71,7 @@ namespace WellnessHub.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Intensity")
+                    b.Property<string>("Intensity");
                     b.Property<int>("Energia")
                         .HasColumnType("int");
 
@@ -81,7 +81,7 @@ namespace WellnessHub.Migrations
                         .HasColumnType("nvarchar(50)");
                     b.Property<DateTime>("SessionDate")
                         .HasColumnType("date");
-                    b.Property<string>("User")
+                    b.Property<string>("User");
                     b.Property<DateTime>("FechaRegistro")
                         .HasColumnType("datetime2");
                     b.Property<int>("HorasDeSueno")
@@ -95,7 +95,7 @@ namespace WellnessHub.Migrations
                     b.HasKey("Id");
                     b.ToTable("Workouts");
                     b.ToTable("EstadosDeAnimo");
-                });
+                }));
 #pragma warning restore 612, 618
         }
     }

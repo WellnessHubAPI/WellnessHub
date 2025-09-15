@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WellnessHubApi.Data;
+//using WellnessHubApi.Data;
+using WellnessHub.Data;
 using WellnessHubApi.Models;
 
 namespace WellnessHubApi.Controllers
