@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WellnessHubApi.Models;
+using WellnessHub.Models;
 
-namespace WellnessHubApi.Data
+namespace WellnessHub.Data
 {
     public class WellnessHubContext : DbContext
     {
         public WellnessHubContext(DbContextOptions<WellnessHubContext> options) : base(options) { }
 
         public DbSet<Comida> Comidas { get; set; }
+        public DbSet<EstadoDeAnimo> EstadosDeAnimo { get; set; }
     }
 }
